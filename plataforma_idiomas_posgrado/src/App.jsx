@@ -4,7 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
-  const basename = '/assets/dist'; // Cambia esto según tu subdirectorio
+  //const basename = '/assets/dist'; // Cambia esto según tu subdirectorio
+  const basename = '';
 
   return (
     <BrowserRouter basename={basename}>

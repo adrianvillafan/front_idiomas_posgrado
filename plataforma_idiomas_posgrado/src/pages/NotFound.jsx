@@ -1,7 +1,7 @@
 // src/pages/NotFound.jsx
 
 import React from 'react';
-import { Container, Typography, Button } from '@mui/material';
+import { Container, Header, Button, SpaceBetween } from '@cloudscape-design/components';
 import { useNavigate } from 'react-router-dom';
 
 const NotFound = () => {
@@ -12,19 +12,15 @@ const NotFound = () => {
   };
 
   return (
-    <Container style={{ textAlign: 'center', marginTop: '50px' }}>
-      <Typography variant="h1" component="h2" gutterBottom>
-        404
-      </Typography>
-      <Typography variant="h5" component="h3" gutterBottom>
-        Página no encontrada
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        Lo sentimos, la página que estás buscando no existe.
-      </Typography>
-      <Button variant="contained" color="primary" onClick={handleGoHome}>
-        Volver al inicio
-      </Button>
+    <Container>
+      <SpaceBetween size="l" direction="vertical" textAlign="center">
+        <Header variant="h1">404</Header>
+        <Header variant="h3">Página no encontrada</Header>
+        <p>Lo sentimos, la página que estás buscando no existe.</p>
+        <Button variant="primary" onClick={handleGoHome}>
+          Volver al inicio
+        </Button>
+      </SpaceBetween>
     </Container>
   );
 };

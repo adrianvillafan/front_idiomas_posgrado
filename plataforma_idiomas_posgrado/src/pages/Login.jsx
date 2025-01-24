@@ -1,7 +1,7 @@
 // src/pages/Login.jsx
 
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Box } from '@mui/material';
+import { Container, FormField, Input, Button, Header, SpaceBetween } from '@cloudscape-design/components';
 import { validarUsuario } from '../apis/services/userService';
 
 const Login = () => {
@@ -20,39 +20,25 @@ const Login = () => {
   };
 
   return (
-    <Container maxWidth="sm">
-      <Box display="flex" flexDirection="column" alignItems="center" mt={8}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Iniciar Sesión
-        </Typography>
-        <TextField
-          label="Correo Electrónico"
-          variant="outlined"
-          margin="normal"
-          fullWidth
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          label="Contraseña"
-          variant="outlined"
-          margin="normal"
-          type="password"
-          fullWidth
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleLogin}
-          fullWidth
-          style={{ marginTop: '16px' }}
-        >
+    <Container header={<Header variant="h1">Iniciar Sesión</Header>}>
+      <SpaceBetween size="l">
+        <FormField label="Correo Electrónico">
+          <Input
+            value={email}
+            onChange={(e) => setEmail(e.detail.value)}
+          />
+        </FormField>
+        <FormField label="Contraseña">
+          <Input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.detail.value)}
+          />
+        </FormField>
+        <Button variant="primary" onClick={handleLogin}>
           Iniciar Sesión
         </Button>
-        {error && <Typography color="error" style={{ marginTop: '16px' }}>{error}</Typography>}
-      </Box>
+      </SpaceBetween>
     </Container>
   );
 };
