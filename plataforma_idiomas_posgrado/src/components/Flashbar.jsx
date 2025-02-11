@@ -1,28 +1,10 @@
-//src/components/Flashbar.jsx
-
 import React from "react";
-import {Flashbar as Flash, Link} from "@cloudscape-design/components";
+import { Flashbar as Flash } from "@cloudscape-design/components";
+import { useFlashbar } from '../pages/app/hooks/useFlashbar';
 
 const Flashbar = () => {
-  const [items, setItems] = React.useState([
-    {
-      type: "info",
-      dismissible: true,
-      dismissLabel: "Dismiss message",
-      onDismiss: () => setItems([]),
-      content: (
-        <>
-          This is an info flash message. It contains{" "}
-          <Link color="inverted" href="#">
-            a link to another page
-          </Link>
-          .
-        </>
-      ),
-      id: "message_1"
-    }
-  ]);
-  return <Flash items={items} />;
+  const { flashbarItems } = useFlashbar();
+  return <Flash items={flashbarItems} stackItems />;
 }
 
 export default Flashbar;

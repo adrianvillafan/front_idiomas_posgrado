@@ -6,23 +6,23 @@ const TopNavigation = ({ toggleTheme }) => {
     <Top
       identity={{
         href: "#",
-        title: "Service",
+        title: "Unidad de Idiomas Posgrado - Módulo Administrativo",
         logo: {
-          src: "/logo-small-top-navigation.svg",
-          alt: "Service"
+          src: "/vite.png",
+          alt: "Unidad de Idiomas - Módulo Administrativo"
         }
       }}
       utilities={[
+        // {
+        //   type: "button",
+        //   text: "Link",
+        //   href: "https://example.com/",
+        //   external: true,
+        //   externalIconAriaLabel: " (opens in a new tab)"
+        // },
         {
           type: "button",
-          text: "Link",
-          href: "https://example.com/",
-          external: true,
-          externalIconAriaLabel: " (opens in a new tab)"
-        },
-        {
-          type: "button",
-          iconName: "notification",
+          iconName: "suggestions",
           title: "Toggle Theme",
           ariaLabel: "Toggle Theme",
           onClick: toggleTheme,
