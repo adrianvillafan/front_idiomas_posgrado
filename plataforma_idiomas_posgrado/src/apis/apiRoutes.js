@@ -6,6 +6,8 @@ export const apiRoutes = {
   // Rutas de PHP
   iniciarSesion: `${API_BASE_URL}?route=auth`, // Iniciar sesión (POST)
 
+  //Ruta de RRHH
+
 
   
 };
