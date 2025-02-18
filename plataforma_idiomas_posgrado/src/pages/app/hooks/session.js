@@ -1,4 +1,4 @@
-//src/pages/include/auth.jsx
+//src/pages/app/hooks/session.js
 
 // Función para obtener datos del usuario desde sessionStorage
 export const getUserData = () => {
